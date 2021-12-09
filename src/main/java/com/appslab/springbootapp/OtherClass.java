@@ -9,6 +9,6 @@ public class OtherClass {
 
     public OtherClass(EmployeeServiceImpl employeeServiceImpl) {
         this.employeeService = employeeServiceImpl;
-        employeeServiceImpl.writeNum();
+        employeeServiceImpl.writeNumber();
     }
 }

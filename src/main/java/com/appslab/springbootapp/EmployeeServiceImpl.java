@@ -10,17 +10,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private int number;
 
-    public void totalSalary(List<Employee> employeeList)
+    public double totalSalary(List<Employee> employeeList)
     {
-        System.out.println(employeeList.stream().mapToDouble(Employee::getSalary));
+        //System.out.println(employeeList.stream().mapToDouble(Employee::getSalary));
+        return employeeList.stream().mapToDouble(Employee::getSalary).sum();
     }
-    public void totalBonus(List<Employee> employeeList)
+    public int totalBonus(List<Employee> employeeList)
     {
-        System.out.println(employeeList.stream().mapToInt(Employee::getBonus));
+        //System.out.println(employeeList.stream().mapToInt(Employee::getBonus));
+        return employeeList.stream().mapToInt(Employee::getBonus).sum();
     }
 
-    public void writeNum(){
+    public void writeNumber(){
         number = number + 1;
         System.out.println(number);
     }
+
+
+    public double totalDistance(double height, double length, double total) {
+        return (total/height)*(length + height);
+    }
+
 }

@@ -6,13 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface EmployeeService {
-    public static void totalSalary(List<Employee> list){
-
-    }
-    public static void totalBonus(List<Employee> list){
-
-    }
-    public static void writeNumber(){
-
-    }
+   double totalSalary(List<Employee> list);
+   int totalBonus(List<Employee> list);
+   void writeNumber();
+   double totalDistance(double height, double length, double total);
 }

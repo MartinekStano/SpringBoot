@@ -5,6 +5,8 @@ import com.appslab.springbootapp.model.Programmer;
 import com.appslab.springbootapp.model.Teacher;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.ConstructorParameters;
+import javax.websocket.server.PathParam;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,25 +25,20 @@ public class EmployeeController {
         return "Hello World!";
     }
 
-  @RequestMapping(path="/salary")
+  @GetMapping(path="/salary")
    public double getSalary(){
         return employeeService.totalSalary(employeeList);
    }
 
-  @RequestMapping(path="/bonus")
+  @GetMapping(path="/bonus")
    public int getBonus(){
   return employeeService.totalBonus(employeeList);
   }
 
-  double height = 0.2;
-    double lenght = 0.4;
-    double total = 100;
-    @RequestMapping(path = "/snail")
-  public double getTotalDistance(){
-        return employeeService.totalDistance(height, lenght, total);
+
+  @GetMapping(path = "/snail")
+  public double getTotalDistance(@RequestParam(value = "height", defaultValue = "0.2") double height, @RequestParam(value = "length", defaultValue = "0.2") double length, @RequestParam(value = "total", defaultValue = "100") double total){
+        return employeeService.totalDistance(height, length, total);
   }
-
-
-
 
 }
